@@ -63,10 +63,10 @@ endif()
 set(PUBLIC_HEADER_DIR "${CMAKE_SOURCE_DIR}/include")
 
 set(PUBLIC_HDRS
-    uv.h
-    uv-errno.h
-    uv-threadpool.h
-    uv-version.h
+    include/uv.h
+    include/uv-errno.h
+    include/uv-threadpool.h
+    include/uv-version.h
 )
 
 set(SRCS
@@ -134,7 +134,7 @@ endif()
 
 if (UNIX)
     list(APPEND PUBLIC_HDRS
-        uv-unix.h
+        include/uv-unix.h
     )
     list(APPEND SRCS
         src/unix/async.c
@@ -164,7 +164,7 @@ endif()
 
 if (LINUX)
     list(APPEND PUBLIC_HDRS
-        uv-linux.h
+        include/uv-linux.h
     )
     list(APPEND SRCS
         src/unix/linux-core.c
@@ -178,8 +178,8 @@ endif()
 
 if (ANDROID)
     list(APPEND PUBLIC_HDRS
-        android-ifaddrs.h
-        pthread-fixes.h
+        include/android-ifaddrs.h
+        include/pthread-fixes.h
     )
     list(APPEND SRCS
         src/unix/android-ifaddrs.c
